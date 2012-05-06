@@ -89,25 +89,21 @@
                     </p>
                     <div data-role="fieldcontain">
                       <fieldset data-role="controlgroup">
-                        <label for="textinput5">Bank daten
-                        </label>
+                        <label for="textinput5">Bank daten</label><br />
                         <input id="textinput5" placeholder="Konto" value="" type="text" />
                         <br />
                         <input id="textinput6" placeholder="BLZ" value="" type="text" />
                       </fieldset>
                     </div>
                     <div data-role="fieldcontain">
+                            <!-- <a href="#clear" style="float:right;">Clear</a> -->
                         <fieldset data-role="controlgroup">
-                          <label for="textinput6">
-                              Unterschrift
-                          </label>
+                          <label for="textinput6" style="float:left">Unterschrift</label><br />
                           <form method="post" action="#" class="sigPad">
-                              <div class="sig sigWrapper ui-input-text ui-body-c ui-corner-all ui-shadow-inset" style="display: block; ">
-                                  <div class="typed" style="display: none; "></div>
-                                  <canvas class="pad" width="100%" height="100px"></canvas>
-                                  <input type="hidden" name="output" class="output" value="">
-                                  <a href="#clear">Clear</a>
-                              </div>
+                            <div class="sig sigWrapper ui-body-c ui-corner-all ui-shadow-inset">
+                              <canvas class="pad" width="450" height="96"></canvas>
+                              <input type="hidden" name="output" class="output" value="">
+                            </div>
                           </form>
 
 
@@ -284,8 +280,12 @@
         </div>
         <script>
         $(document).ready(function () {
-          $('.sigPad').signaturePad({drawOnly:true});
-          $("#throbber").throbber();
+          var options = {
+            'bgColour'  : 'transparent',
+            'drawOnly'  : true
+          };
+          $('.sigPad').signaturePad(options);
+          $('#throbber').throbber();
         });
 
           (function(d, s) {
