@@ -806,7 +806,7 @@ background-color: transparent
 background-color: #4596ce
 }
 .ui-icon-loading {
-background: url(images/ajax-loader.gif);
+background: url(../img/ajax-loader.gif);
 background-size: 46px 46px
 }
 .ui-btn-corner-tl {
