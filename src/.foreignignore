@@ -1,5 +1,0 @@
-ignoreme.txt
-*.swp
-./tests/
-.git/
-./identity.json
