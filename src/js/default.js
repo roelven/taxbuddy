@@ -2,16 +2,16 @@ $(function(){
 
   // Bind the event.
   $(window).hashchange( function(){
-    if (location.hash == "#page2") {
+    if (location.hash === '#page2') {
       // Alerts every time the hash changes!
       forge.file.getImage(function(file) {
         forge.file.imageURL(file, function(url) {
-          $("#page2 a").first().click()
+          $('a#photo-button').click();
         });
       });
     };
 
-    if (location.hash == "#page6") {
+    if (location.hash === '#page6') {
       setTimeout(function() {
         $("#page6 a").first().click();
       }, 3500);
@@ -22,7 +22,7 @@ $(function(){
     event.preventDefault();
 
     // from http://thejimgaudet.com/articles/support/web/jquery-e-mail-validation-without-a-plugin/
-    function validateEmail($email) { var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; return $email != '' && emailReg.test( $email );}
+   function validateEmail($email) { var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; return $email != '' && emailReg.test( $email );}
 
     if (validateEmail($("#textinput7").val())) {
       $("#page12 a.hidden.button").click();
