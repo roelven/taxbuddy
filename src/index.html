@@ -1,29 +1,313 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hello World!</title>
-		
-		<link rel="stylesheet" href="css/default.css" type="text/css">
-			
-		<script type="text/javascript" src="js/default.js"></script>
-		
-	</head>
-	<body>
-		<h1>Hello world!</h1>
-		<div class="description">
-			<p>Congratulations on installing Forge!</p>
-			<p>This is an example project, take a look in src/js for the main logic.</p>
-		</div>
-		
-		<h2>Getting started</h2>
-		<div class="description">
-			<p>If you're here, you've proabably read <a href="http://current-docs.trigger.io/">the Forge documentation</a>!</p>
-		</div>
-		
-		<h2>Next steps</h2>
-		<div class="description">
-			<p>This is just a simple starting point for an app which will work on iOS, Android, Chrome, Firefox, Safari and Internet Explorer</p>
-			<p>Next, you could try going through <a href="http://current-docs.trigger.io/weather/index.html">a tutorial</a>, or looking at our <a href="http://current-docs.trigger.io/api/index.html">API reference</a>
-		</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js">
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="content">
+                <div style="">
+                    <img style="width: 100%; height: 100%" src="http://assets.codiqa.com/ps/13197/cda53610fc5e7f40taxbuddy.png" />
+                </div>
+                <div>
+                    <ol>
+                        <li>
+                            <strong>
+                                Fotografiere die Lohnsteuerkarte
+                            </strong>
+                        </li>
+                        <li>
+                            <strong>
+                                Beantworte ein paar Fragen
+                            </strong>
+                        </li>
+                        <li>
+                            <strong>
+                                Ausdrucken &amp; abschicken
+                            </strong>
+                        </li>
+                    </ol>
+                </div>
+                <a data-role="button" data-transition="slide" href="#page2" data-icon="arrow-r" data-iconpos="right">
+                    Foto machen
+                </a>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-role="content">
+            </div>
+        </div>
+        <div data-role="page" id="page6">
+            <div data-role="content">
+                <div>
+                    <p>
+                        <strong>
+                            loading ...
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page7">
+            <div data-role="content">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-a">
+                        <h2>
+                            More?
+                        </h2>
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-a">
+                        <a data-role="button" data-transition="pop" href="#page12" data-icon="forward" data-iconpos="right">
+                            No
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
+                            Yes
+                        </a>
+                    </div>
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page8">
+            <div data-role="content">
+                <div>
+                    <p>
+                        <strong>
+                            Did you move recently?
+                        </strong>
+                    </p>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a data-role="button" data-transition="pop" href="#page10" data-icon="forward" data-iconpos="right">
+                            No
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button" data-transition="slide" href="#page9" data-icon="arrow-r" data-iconpos="right">
+                            Yes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page9">
+            <div data-role="content">
+                <div>
+                    <p>
+                        <strong>
+                            Gib deine neue Addresse an:
+                        </strong>
+                    </p>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textarea1">
+                        </label>
+                        <textarea id="textarea1" placeholder="">
+                        </textarea>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>
+                            Warum bist du umgezogen?
+                        </legend>
+                        <input name="radiobuttons1" id="radio1" value="privat" type="radio" />
+                        <label for="radio1">
+                            Privat
+                        </label>
+                        <input name="radiobuttons1" id="radio2" value="beruflich" type="radio" />
+                        <label for="radio2">
+                            Beruflich
+                        </label>
+                        <input name="radiobuttons1" id="radio3" value="beruflich" type="radio" />
+                        <label for="radio3">
+                            Beides
+                        </label>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput1">
+                            Wieviel hat der Umzug gekostet?
+                        </label>
+                        <input id="textinput1" placeholder="" value="z.B. 2000 €" type="text" />
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="slide" href="#page10" data-icon="arrow-r" data-iconpos="right">
+                    weiter
+                </a>
+            </div>
+        </div>
+        <div data-role="page" id="page10">
+            <div data-role="content">
+                <div>
+                    <p>
+                        <strong>
+                            <br />
+                        </strong>
+                    </p>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput2">
+                            Gib deine Steuernummer ein
+                        </label>
+                        <input id="textinput2" placeholder="" value="" type="text" />
+                    </fieldset>
+                </div>
+                <div>
+                    <p>
+                        <strong>
+                            Wenn du noch keine Steuernummer hast, kein Problem. Wir wissen auch nicht
+                            so genau ...
+                        </strong>
+                    </p>
+                </div>
+                <a data-role="button" data-transition="slide" href="#page11" data-icon="arrow-r" data-iconpos="right">
+                    weiter
+                </a>
+            </div>
+        </div>
+        <div data-role="page" id="page11">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput3">
+                            Hast du Fachliteratur gekauft? Wie viel hast du ausgeben?
+                        </label>
+                        <input id="textinput3" placeholder="" value="0 €" type="text" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput4">
+                            Hast du dich fortgebildet? Wieviel hast du dafür ausgegeben?
+                        </label>
+                        <input id="textinput4" placeholder="" value="0 €" type="text" />
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="slide" href="page11" data-icon="arrow-r" data-iconpos="right">
+                    weiter
+                </a>
+            </div>
+        </div>
+        <div data-role="page" id="page12">
+            <div data-role="content">
+                <div>
+                    <p>
+                        <strong>
+                            Fast fertig, nur noch wenig.
+                        </strong>
+                    </p>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput5">
+                            Kontonummer
+                        </label>
+                        <input id="textinput5" placeholder="" value="" type="text" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput6">
+                            Bankleitzahl
+                        </label>
+                        <input id="textinput6" placeholder="" value="" type="text" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput7">
+                            Email
+                        </label>
+                        <input id="textinput7" placeholder="" value="" type="text" />
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="slide" href="#page14" data-icon="arrow-r" data-iconpos="right">
+                    weiter
+                </a>
+            </div>
+        </div>
+        <div data-role="page" id="page14">
+            <div data-role="content">
+                <h2>
+                    Fertig
+                </h2>
+                <div>
+                    <p>
+                        <strong>
+                            Wir analysieren das alles und schicken dir bald eine Email mit deinem
+                            Steuerformular.
+                        </strong>
+                    </p>
+                    <p>
+                        <strong>
+                            Drucke es aus, unterschreibe und schicke es an:
+                        </strong>
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>
+                                Finanzamt Berlin
+                            </strong>
+                        </li>
+                        <li>
+                            <strong>
+                            </strong>
+                            <strong>
+                                Pappelallee 78/79
+                            </strong>
+                        </li>
+                        <li>
+                            <strong>
+                                10437 Berlin
+                            </strong>
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>
+                            <br />
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            //App custom javascript
+        </script>
+    </body>
 </html>
