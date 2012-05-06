@@ -5,10 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>TaxBuddy</title>
         <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.signaturepad.css">
         <link rel="stylesheet" href="css/default.css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.mobile-1.1.0.min.js"></script>
         <script src="js/jquery.ba-hashchange.min.js"></script>
+        <script src="js/jquery.signaturepad.min.js"></script>
+        <script src="js/json2.min.js"></script>
         <script src="js/throbber.js"></script>
         <script src="js/default.js"></script>
     </head>
@@ -38,6 +41,31 @@
                 <a data-role="button" data-transition="slide" href="#page2" data-icon="arrow-r" data-iconpos="right">
                     Foto machen
                 </a>
+                <form method="post" action="#" class="sigPad">
+                    <label for="name">
+                        Print your name
+                    </label>
+                    <input type="text" name="name" id="name" class="name">
+                    <p class="drawItDesc" style="display: block; ">
+                        Draw your signature
+                    </p>
+                    <ul class="sigNav" style="display: block; ">
+                        <li class="drawIt">
+                            <a href="#draw-it" class="current">Draw It</a>
+                        </li>
+                        <li class="clearButton" style="display: list-item; ">
+                            <a href="#clear">Clear</a>
+                        </li>
+                    </ul>
+                    <div class="sig sigWrapper current" style="display: block; ">
+                        <div class="typed" style="display: none; "></div>
+                        <canvas class="pad" width="198" height="55"></canvas>
+                        <input type="hidden" name="output" class="output" value="">
+                    </div>
+                    <button type="submit">
+                        I accept the terms of this agreement.
+                    </button>
+                </form>
             </div>
         </div>
         <div data-role="page" id="page2">
@@ -294,6 +322,9 @@
         </div>
         <script>
           $("#throbber").throbber();
+          $(document).ready(function () {
+              $('.sigPad').signaturePad({drawOnly:true});
+          });
         </script>
     </body>
 </html>
