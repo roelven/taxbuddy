@@ -1,0 +1,5 @@
+development/
+.template/
+*.log
+.DS_Store
+forge-error.log
