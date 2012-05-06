@@ -15,6 +15,19 @@
 				"all_frames": false
 			}
 		],
+    "icons": {
+      "android": {
+        "36": "img/icons/icon36.png",
+        "48": "img/icons/icon48.png",
+        "72": "img/icons/icon72.png"
+      },
+      "ios": {
+        "57": "img/icons/icon57.png",
+        "72": "img/icons/icon72.png",
+        "114": "img/icons/icon114.png",
+        "512": "img/icons/icon512.png"
+      }
+    },
 		"orientations": {
 		  "default": "portrait",
       "iphone": "portrait",
