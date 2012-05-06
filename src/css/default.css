@@ -58,4 +58,7 @@ a {
   margin: auto;
   display: block;
 }
+
+#photo-button {
+  display: none;
 }

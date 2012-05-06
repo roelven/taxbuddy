@@ -13,7 +13,7 @@
         <script src="js/default.js"></script>
     </head>
     <body>
-        <div data-role="page" id="page1">
+        <div data-role="page" class="home" id="page1">
             <div data-role="content">
                 <img width="260" height="264" alt="TaxBuddy" src="img/taxbuddy_logo.png" id="tb_logo" />
                 <div>
@@ -40,14 +40,14 @@
                 </a>
             </div>
         </div>
-        <div data-role="page" id="page2">
+        <div data-role="page" class="photo" id="page2">
             <div data-role="content">
-              <a data-role="button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right">
+              <a data-role="button" id="photo-button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right">
                   weiter
               </a>
             </div>
         </div>
-        <div data-role="page" id="page6">
+        <div data-role="page" class="photo-loading" id="page6">
             <div data-role="content">
                 <div>
                   <p>Deine Lohnsteuerbescheinigung wird eingelesen</p>
@@ -56,53 +56,66 @@
                 </div>
             </div>
         </div>
-        <div data-role="page" id="page7">
+        <div data-role="page" class="identify" id="page7">
             <div data-role="content">
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <h2>
-                            Willst du noch ein paar mehr Fragen beantworten? Damit bekommst du eventuell mehr Steuern zurück?
-                        </h2>
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                    <div class="ui-block-a">
-                        <a data-role="button" data-transition="pop" href="#page12" data-icon="forward" data-iconpos="right">
-                            Nein
-                        </a>
-                    </div>
-                    <div class="ui-block-b">
-                        <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
-                            Ja
-                        </a>
-                    </div>
-                    <div class="ui-block-a">
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                </div>
+                <h3>
+                    Wohnst du noch hier?
+                </h3>
+                <p>
+                  JOHAN HACKER<br />
+                  FROHNHAUSER STR. 109<br />
+                  45144 ESSEN<br />
+                </p>
+                <p>
+                  <br />
+                </p>
+                <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
+                    Ja, stimmt
+                </a>
+                <a data-role="button" data-transition="pop" href="#page12" data-icon="forward" data-iconpos="right">
+                    Nein, ich bin umgezogen
+                </a>
             </div>
         </div>
-        <div data-role="page" id="page8">
+        <div data-role="page" class="finalize" id="page8">
             <div data-role="content">
                 <div>
+                    <h3>Fertig!</h3>
                     <p>
-                        <strong>
-                            Bist du in 2011 umgezogen?
-                        </strong>
+                      Wohin soll das Finanzamt die steuerruckzahlung uberweisen?
                     </p>
-                </div>
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <a data-role="button" data-transition="pop" href="#page10" data-icon="forward" data-iconpos="right">
-                            Nein
-                        </a>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textinput5">
+                                Kontonummer
+                            </label>
+                            <input id="textinput5" placeholder="" value="" type="text" />
+                        </fieldset>
                     </div>
-                    <div class="ui-block-b">
-                        <a data-role="button" data-transition="slide" href="#page9" data-icon="arrow-r" data-iconpos="right">
-                            Ja
-                        </a>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textinput6">
+                                Bankleitzahl
+                            </label>
+                            <input id="textinput6" placeholder="" value="" type="text" />
+                        </fieldset>
                     </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textarea1">Unterschrift
+                            </label>
+                            <textarea id="textarea1" placeholder="JOHAN">
+                            </textarea>
+                        </fieldset>
+                    </div>
+
+                    <a data-role="button" data-transition="slide" data-theme="b" href="#page14">
+                        Jetzt schicken
+                    </a>
+                    <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
+                        Warte ich wolle optimieren
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -249,51 +262,38 @@
             </div>
         </div>
         <div data-role="page" id="page14">
-            <div data-role="content">
-                <h2>
-                    Fertig
-                </h2>
-                <div>
-                    <p>
-                        <strong>
-                            Wir analysieren das alles und schicken dir bald eine Email mit deinem
-                            Steuerformular.
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                            Drucke es aus, unterschreibe und schicke es an:
-                        </strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>
-                                Finanzamt Berlin
-                            </strong>
-                        </li>
-                        <li>
-                            <strong>
-                            </strong>
-                            <strong>
-                                Pappelallee 78/79
-                            </strong>
-                        </li>
-                        <li>
-                            <strong>
-                                10437 Berlin
-                            </strong>
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>
-                            <br />
-                        </strong>
-                    </p>
-                </div>
+          <div data-role="content">
+            <h3>
+                Das war Einfach oder?
+            </h3>
+            <p>
+              Erzehle jetzt deine Freunden von TaxBuddy:
+            </p>
+              <p><div class="fb-like" data-send="false" data-width="280"></div></p>
+              <div>
+                <a class="twitter-share-button" data-count="horizontal">Tweet</a>
+                <div class="g-plusone" data-size="medium"></div>
+              </div>
+              <div id="fb-root"></div><!-- fb needs this -->
             </div>
+            <a data-role="button" class="button visible" data-transition="slide" href="#page1" data-icon="arrow-r" data-iconpos="right">
+                Fang wieder von vorne an
+            </a>
+
+          </div>
         </div>
         <script>
           $("#throbber").throbber();
+          (function(d, s) {
+            var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.src = url; js.id = id;
+              fjs.parentNode.insertBefore(js, fjs);
+            };
+            load('//connect.facebook.net/en_US/all.js#appId=381370078572070&xfbml=1', 'fbjssdk');
+            load('https://apis.google.com/js/plusone.js', 'gplus1js');
+            load('//platform.twitter.com/widgets.js', 'tweetjs');
+          }(document, 'script'));
         </script>
     </body>
 </html>
