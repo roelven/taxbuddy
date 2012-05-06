@@ -4,3 +4,4 @@ development/
 .DS_Store
 forge-error.log
 .forgeignore
+identity.json
