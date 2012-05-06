@@ -15,6 +15,12 @@
 				"all_frames": false
 			}
 		],
+		"orientations": {
+		  "default": "portrait",
+      "iphone": "portrait",
+      "android": "portrait",
+      "ipad": "portrait"
+		},
 		"background": {
 			"files": ["js/background.js"]
 		},
