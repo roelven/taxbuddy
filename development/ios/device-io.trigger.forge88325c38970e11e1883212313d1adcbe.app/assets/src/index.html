@@ -5,22 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>TaxBuddy</title>
         <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.signaturepad.css">
         <link rel="stylesheet" href="css/default.css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.mobile-1.1.0.min.js"></script>
         <script src="js/jquery.ba-hashchange.min.js"></script>
+        <script src="js/jquery.signaturepad.min.js"></script>
+        <script src="js/json2.min.js"></script>
         <script src="js/throbber.js"></script>
         <script src="js/default.js"></script>
     </head>
     <body>
-        <div data-role="page" id="page1">
+        <div data-role="page" class="home" id="page1">
             <div data-role="content">
                 <img width="260" height="264" alt="TaxBuddy" src="img/taxbuddy_logo.png" id="tb_logo" />
                 <div>
                     <ol>
                         <li>
                             <strong>
-                                Fotografiere die Lohnsteuerkarte
+                                Fotografiere die Lohnsteuerbescheinigung
                             </strong>
                         </li>
                         <li>
@@ -40,81 +43,87 @@
                 </a>
             </div>
         </div>
-        <div data-role="page" id="page2">
+        <div data-role="page" class="photo" id="page2">
             <div data-role="content">
-              <a data-role="button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right">
+              <a data-role="button" id="photo-button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right"  style="display: none">
                   weiter
               </a>
             </div>
         </div>
-        <div data-role="page" id="page6">
+        <div data-role="page" class="photo-loading" id="page6">
             <div data-role="content">
                 <div>
                   <p>Deine Lohnsteuerbescheinigung wird eingelesen</p>
                   <div id="throbber"></div>
-                  <a href="#page7" style="display: none"></a>
+                  <a data-role="button" id="loading-button" data-transition="slide" href="#page7" data-icon="arrow-r" data-iconpos="right"  style="display: none"></a>
                 </div>
             </div>
         </div>
-        <div data-role="page" id="page7">
+        <div data-role="page" class="identify" id="page7">
             <div data-role="content">
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                    <div class="ui-block-a">
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                    <div class="ui-block-a">
-                        <h2>
-                            More?
-                        </h2>
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                    <div class="ui-block-a">
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                    <div class="ui-block-a">
-                        <a data-role="button" data-transition="pop" href="#page12" data-icon="forward" data-iconpos="right">
-                            No
-                        </a>
-                    </div>
-                    <div class="ui-block-b">
-                        <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
-                            Yes
-                        </a>
-                    </div>
-                    <div class="ui-block-a">
-                    </div>
-                    <div class="ui-block-b">
-                    </div>
-                </div>
+                <h3>
+                    Wohnst du noch hier?
+                </h3>
+                <p>
+                  JOHAN HACKER<br />
+                  FROHNHAUSER STR. 109<br />
+                  45144 ESSEN<br />
+                </p>
+                <p>
+                  <br />
+                </p>
+                <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
+                    Ja, stimmt
+                </a>
+                <a data-role="button" data-transition="pop" href="#page12" data-icon="forward" data-iconpos="right">
+                    Nein, ich bin umgezogen
+                </a>
             </div>
         </div>
-        <div data-role="page" id="page8">
+        <div data-role="page" class="finalize" id="page8">
             <div data-role="content">
                 <div>
+                    <h3>Fertig!</h3>
                     <p>
-                        <strong>
-                            Did you move recently?
-                        </strong>
+                      Wohin soll das Finanzamt die steuerruckzahlung uberweisen?
                     </p>
-                </div>
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <a data-role="button" data-transition="pop" href="#page10" data-icon="forward" data-iconpos="right">
-                            No
-                        </a>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textinput5">
+                                Kontonummer
+                            </label>
+                            <input id="textinput5" placeholder="" value="" type="text" />
+                            <label for="textinput6">
+                                Bankleitzahl
+                            </label>
+                            <input id="textinput6" placeholder="" value="" type="text" />
+                        </fieldset>
                     </div>
-                    <div class="ui-block-b">
-                        <a data-role="button" data-transition="slide" href="#page9" data-icon="arrow-r" data-iconpos="right">
-                            Yes
-                        </a>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                          <label for="textinput6">
+                              Unterschrift
+                          </label>
+                          <form method="post" action="#" class="sigPad">
+                              <div class="sig sigWrapper current" style="display: block; ">
+                                  <div class="typed" style="display: none; "></div>
+                                  <canvas class="pad" width="198" height="55"></canvas>
+                                  <input type="hidden" name="output" class="output" value="">
+                                  <a href="#clear">Clear</a>
+                              </div>
+                          </form>
+
+
+                        </fieldset>
                     </div>
+
+                    <a data-role="button" data-transition="slide" data-theme="b" href="#page14">
+                        Jetzt schicken
+                    </a>
+                    <a data-role="button" data-transition="slide" href="#page12" data-icon="arrow-r" data-iconpos="right">
+                        Warte ich wolle optimieren
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -215,20 +224,15 @@
                         <input id="textinput4" placeholder="" value="0 €" type="text" />
                     </fieldset>
                 </div>
-                <a data-role="button" data-transition="slide" href="page11" data-icon="arrow-r" data-iconpos="right">
+                <a data-role="button" data-transition="slide" href="page12" data-icon="arrow-r" data-iconpos="right">
                     weiter
                 </a>
             </div>
         </div>
         <div data-role="page" id="page12">
             <div data-role="content">
-                <div>
-                    <p>
-                        <strong>
-                            Fast fertig, nur noch wenig.
-                        </strong>
-                    </p>
-                </div>
+                <h3>Optimize!</h3>
+
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="textinput5">
@@ -253,57 +257,49 @@
                         <input id="textinput7" placeholder="" value="" type="text" />
                     </fieldset>
                 </div>
-                <a data-role="button" data-transition="slide" href="#page14" data-icon="arrow-r" data-iconpos="right">
+                <a data-role="button" class="button visible" data-transition="slide" href="#" data-icon="arrow-r" data-iconpos="right">
                     weiter
                 </a>
+
+                <a href="#page14" class="hidden button" style="display: none"></a>
             </div>
         </div>
         <div data-role="page" id="page14">
-            <div data-role="content">
-                <h2>
-                    Fertig
-                </h2>
-                <div>
-                    <p>
-                        <strong>
-                            Wir analysieren das alles und schicken dir bald eine Email mit deinem
-                            Steuerformular.
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>
-                            Drucke es aus, unterschreibe und schicke es an:
-                        </strong>
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>
-                                Finanzamt Berlin
-                            </strong>
-                        </li>
-                        <li>
-                            <strong>
-                            </strong>
-                            <strong>
-                                Pappelallee 78/79
-                            </strong>
-                        </li>
-                        <li>
-                            <strong>
-                                10437 Berlin
-                            </strong>
-                        </li>
-                    </ul>
-                    <p>
-                        <strong>
-                            <br />
-                        </strong>
-                    </p>
-                </div>
+          <div data-role="content">
+            <h3>
+                Das war Einfach oder?
+            </h3>
+            <p>
+              Erzehle jetzt deine Freunden von TaxBuddy:
+            </p>
+              <p><div class="fb-like" data-send="false" data-width="280"></div></p>
+              <div>
+                <a class="twitter-share-button" data-count="horizontal">Tweet</a>
+                <div class="g-plusone" data-size="medium"></div>
+              </div>
+              <div id="fb-root"></div><!-- fb needs this -->
             </div>
+            <a data-role="button" class="button visible" data-transition="slide" href="#page1" data-icon="arrow-r" data-iconpos="right">
+                Fang wieder von vorne an
+            </a>
+
+          </div>
         </div>
         <script>
+        $(document).ready(function () {
+          $('.sigPad').signaturePad({drawOnly:true});
           $("#throbber").throbber();
+        });
+
+          (function(d, s) {
+            var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.src = url; js.id = id;
+              fjs.parentNode.insertBefore(js, fjs);
+            };
+            load('//connect.facebook.net/en_US/all.js#appId=381370078572070&xfbml=1', 'fbjssdk');
+            load('//platform.twitter.com/widgets.js', 'tweetjs');
+          }(document, 'script'));
         </script>
     </body>
 </html>

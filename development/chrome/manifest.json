@@ -1,7 +1,7 @@
 {
 	"name": "taxbuddy",
-	"version": "0.1",
-	"description": "My Extension Description",
+	"version": "0.1.4",
+	"description": "FILE FUCKING TAXES FAST",
 	"permissions": ["http://*/*", "https://*/*", "tabs", "notifications"],
 	"background_page": "forge.html",
 	"content_scripts": [

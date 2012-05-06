@@ -36,9 +36,9 @@ h2 {
 	font-weight:normal;
 }
 
-a {
-	color: white;
-}
+/*a {
+  color: white;
+}*/
 
 .text-align-center {
   text-align: center;
@@ -57,5 +57,4 @@ a {
 #tb_logo {
   margin: auto;
   display: block;
-}
 }
