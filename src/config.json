@@ -3,7 +3,7 @@
 	"platform_version": "v1.3",
 	"name": "taxbuddy",
 	"author": "hello@roelvanderven.com",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "My Extension Description",
 	"modules": {
 		"activations": [
@@ -19,7 +19,7 @@
 			"files": ["js/background.js"]
 		},
 		"button": {
-			"default_title": "An example browser toolbar icon",
+			"default_title": "Taxbuddy",
 			"default_popup": "index.html",
 			"default_icon": "img/logo-forge.png"
 		},
@@ -37,7 +37,7 @@
 		"request": {
 			"permissions": []
 		},
-		"sms": true,
+		"sms": false,
 		"tabs": true,
 		"tools": true
 	}
