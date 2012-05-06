@@ -41,31 +41,6 @@
                 <a data-role="button" data-transition="slide" href="#page2" data-icon="arrow-r" data-iconpos="right">
                     Foto machen
                 </a>
-                <form method="post" action="#" class="sigPad">
-                    <label for="name">
-                        Print your name
-                    </label>
-                    <input type="text" name="name" id="name" class="name">
-                    <p class="drawItDesc" style="display: block; ">
-                        Draw your signature
-                    </p>
-                    <ul class="sigNav" style="display: block; ">
-                        <li class="drawIt">
-                            <a href="#draw-it" class="current">Draw It</a>
-                        </li>
-                        <li class="clearButton" style="display: list-item; ">
-                            <a href="#clear">Clear</a>
-                        </li>
-                    </ul>
-                    <div class="sig sigWrapper current" style="display: block; ">
-                        <div class="typed" style="display: none; "></div>
-                        <canvas class="pad" width="198" height="55"></canvas>
-                        <input type="hidden" name="output" class="output" value="">
-                    </div>
-                    <button type="submit">
-                        I accept the terms of this agreement.
-                    </button>
-                </form>
             </div>
         </div>
         <div data-role="page" class="photo" id="page2">
@@ -130,17 +105,26 @@
                     </div>
                     <div data-role="fieldcontain">
                         <fieldset data-role="controlgroup">
-                            <label for="textarea1">Unterschrift
-                            </label>
-                            <textarea id="textarea1" placeholder="JOHAN">
-                            </textarea>
+                          <label for="textinput6">
+                              Unterschrift
+                          </label>
+                          <form method="post" action="#" class="sigPad">
+                              <div class="sig sigWrapper current" style="display: block; ">
+                                  <div class="typed" style="display: none; "></div>
+                                  <canvas class="pad" width="198" height="55"></canvas>
+                                  <input type="hidden" name="output" class="output" value="">
+                                  <a href="#clear">Clear</a>
+                              </div>
+                          </form>
+
+
                         </fieldset>
                     </div>
 
                     <a data-role="button" data-transition="slide" data-theme="b" href="#page14">
                         Jetzt schicken
                     </a>
-                    <a data-role="button" data-transition="slide" href="#page8" data-icon="arrow-r" data-iconpos="right">
+                    <a data-role="button" data-transition="slide" href="#page12" data-icon="arrow-r" data-iconpos="right">
                         Warte ich wolle optimieren
                     </a>
 
@@ -251,13 +235,8 @@
         </div>
         <div data-role="page" id="page12">
             <div data-role="content">
-                <div>
-                    <p>
-                        <strong>
-                            Fast fertig, nur noch wenig.
-                        </strong>
-                    </p>
-                </div>
+                <h3>Optimize!</h3>
+
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="textinput5">
@@ -323,7 +302,6 @@
               fjs.parentNode.insertBefore(js, fjs);
             };
             load('//connect.facebook.net/en_US/all.js#appId=381370078572070&xfbml=1', 'fbjssdk');
-            load('https://apis.google.com/js/plusone.js', 'gplus1js');
             load('//platform.twitter.com/widgets.js', 'tweetjs');
           }(document, 'script'));
         </script>
