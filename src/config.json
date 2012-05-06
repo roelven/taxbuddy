@@ -21,6 +21,14 @@
       "android": "portrait",
       "ipad": "portrait"
 		},
+    "launchimage": {
+      "iphone": "img/iphone1.png",
+      "iphone-retina": "img/iphone1.png",
+      "ipad": "img/iphone1.png",
+      "ipad-landscape": "img/iphone1.png",
+      "android": "img/iphone1.png",
+      "android-landscape": "img/iphone1.png"
+    },
 		"background": {
 			"files": ["js/background.js"]
 		},
