@@ -39,3 +39,15 @@ h2 {
 a {
 	color: white;
 }
+
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+
+#throbber {
+  width: 200px;
+  height: 200px;
+}
