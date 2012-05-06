@@ -47,7 +47,9 @@ a {
   text-align: right;
 }
 
-#throbber {
-  width: 200px;
-  height: 200px;
+#throbber canvas {
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+  padding-top: 80px;
 }
