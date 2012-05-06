@@ -9,6 +9,12 @@ $(function(){
           $("#page2 a").first().click()
         });
       });
-    }
+    };
+
+    if (location.hash == "#page6") {
+      setTimeout(function() {
+        $("#page6 a").first().click();
+      }, 1500);
+    };
   })
 });
