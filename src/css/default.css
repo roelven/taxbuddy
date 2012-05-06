@@ -53,3 +53,9 @@ a {
   padding-bottom: 30px;
   padding-top: 80px;
 }
+
+#tb_logo {
+  margin: auto;
+  display: block;
+}
+}
