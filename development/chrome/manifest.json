@@ -1,6 +1,6 @@
 {
 	"name": "taxbuddy",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "FILE FUCKING TAXES FAST",
 	"permissions": ["http://*/*", "https://*/*", "tabs", "notifications"],
 	"background_page": "forge.html",

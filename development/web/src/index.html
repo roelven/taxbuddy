@@ -2,8 +2,16 @@
 <html>
     <head><script src='/_forge/all.js'></script>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="apple-touch-icon" href="img/icons/icon57.png"/>
+
         <title>TaxBuddy</title>
+
         <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
         <link rel="stylesheet" href="css/jquery.signaturepad.css">
         <link rel="stylesheet" href="css/default.css" />
@@ -45,7 +53,7 @@
         </div>
         <div data-role="page" class="photo" id="page2">
             <div data-role="content">
-              <a data-role="button" id="photo-button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right"  style="display: none">
+              <a data-role="button" id="photo-button" data-transition="slide" href="#page6" data-icon="arrow-r" data-iconpos="right">
                   weiter
               </a>
             </div>
@@ -85,32 +93,26 @@
                 <div>
                     <h3>Fertig!</h3>
                     <p>
-                      Wohin soll das Finanzamt die steuerruckzahlung uberweisen?
+                      Wohin soll das Finanzamt die Steuerrückzahlung überweisen?
                     </p>
                     <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup">
-                            <label for="textinput5">
-                                Kontonummer
-                            </label>
-                            <input id="textinput5" placeholder="" value="" type="text" />
-                            <label for="textinput6">
-                                Bankleitzahl
-                            </label>
-                            <input id="textinput6" placeholder="" value="" type="text" />
-                        </fieldset>
+                      <fieldset data-role="controlgroup">
+                        <label for="textinput5">Bankdaten
+                        </label>
+                        <input id="textinput5" placeholder="Konto" value="" type="text" />
+                        <br />
+                        <input id="textinput6" placeholder="BLZ" value="" type="text" />
+                      </fieldset>
                     </div>
                     <div data-role="fieldcontain">
+                            <!-- <a href="#clear" style="float:right;">Clear</a> -->
                         <fieldset data-role="controlgroup">
-                          <label for="textinput6">
-                              Unterschrift
-                          </label>
+                          <label for="textinput6" style="float:left">Unterschrift</label><br />
                           <form method="post" action="#" class="sigPad">
-                              <div class="sig sigWrapper current" style="display: block; ">
-                                  <div class="typed" style="display: none; "></div>
-                                  <canvas class="pad" width="198" height="55"></canvas>
-                                  <input type="hidden" name="output" class="output" value="">
-                                  <a href="#clear">Clear</a>
-                              </div>
+                            <div class="sig sigWrapper ui-body-c ui-corner-all ui-shadow-inset">
+                              <canvas class="pad" width="450" height="96"></canvas>
+                              <input type="hidden" name="output" class="output" value="">
+                            </div>
                           </form>
 
 
@@ -118,10 +120,10 @@
                     </div>
 
                     <a data-role="button" data-transition="slide" data-theme="b" href="#page14">
-                        Jetzt schicken
+                        Jetzt abschicken
                     </a>
                     <a data-role="button" data-transition="slide" href="#page12" data-icon="arrow-r" data-iconpos="right">
-                        Warte ich wolle optimieren
+                        Warte ich will optimieren
                     </a>
 
                 </div>
@@ -132,7 +134,7 @@
                 <div>
                     <p>
                         <strong>
-                            Gib deine neue Addresse an:
+                            Gib deine neue Adresse an:
                         </strong>
                     </p>
                 </div>
@@ -270,7 +272,7 @@
                 Das war Einfach oder?
             </h3>
             <p>
-              Erzehle jetzt deine Freunden von TaxBuddy:
+              Erzähle jetzt deinen Freunden von TaxBuddy:
             </p>
               <p><div class="fb-like" data-send="false" data-width="280"></div></p>
               <div>
@@ -287,8 +289,12 @@
         </div>
         <script>
         $(document).ready(function () {
-          $('.sigPad').signaturePad({drawOnly:true});
-          $("#throbber").throbber();
+          var options = {
+            'bgColour'  : 'transparent',
+            'drawOnly'  : true
+          };
+          $('.sigPad').signaturePad(options);
+          $('#throbber').throbber();
         });
 
           (function(d, s) {

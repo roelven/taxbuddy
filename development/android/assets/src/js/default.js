@@ -1,4 +1,5 @@
 $(function(){
+  window.scrollTo(0,1);
 
   // Bind the event.
   $(window).hashchange( function(){
